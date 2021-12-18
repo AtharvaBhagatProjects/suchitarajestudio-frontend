@@ -1,0 +1,196 @@
+#bagContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 4vw;
+  top: 2vh;
+  cursor: pointer;
+}
+
+#bagContainer h4 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #f1bc0c;
+  height: 3vh;
+  width: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border-radius: 50%;
+}
+
+#bag {
+  height: 7vh;
+  width: 7vh;
+}
+
+.MyBag {
+  position: fixed;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20vw;
+  z-index: 100;
+  background-color: rgba(253, 246, 242, 0.658);
+  height: 100%;
+  border-left: 2px #c3c7bf;
+  border-left-style: dashed;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  -webkit-transition: all ease-out;
+  transition: all ease-out;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  padding: 2vh 2vw;
+}
+
+.MyBag .Header {
+  width: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.MyBag #closeButton {
+  position: fixed;
+  right: 2vw;
+  cursor: pointer;
+}
+
+.MyBag .ProductsContainer {
+  height: 71vh;
+  width: 100%;
+  margin-top: 2vh;
+  overflow-y: scroll;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2vh 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons img {
+  height: 20px;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons b {
+  height: 20px;
+  cursor: pointer;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 25%;
+  margin: 0vh 2px;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons #plusSign {
+  background-color: green;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductInfo .BagButtons #minusSign {
+  background-color: red;
+}
+
+.MyBag .ProductsContainer .ProductBox .ProductImage {
+  height: 10vh;
+  margin-right: 1vw;
+}
+
+.MyBag #checkoutbutton {
+  color: white;
+  margin-top: 2vh;
+  padding: 1.5vh 2vw;
+  font-size: large;
+  width: 16vw;
+  border: none;
+  background-color: #da981e;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  position: fixed;
+  right: 2vw;
+  bottom: 5vh;
+}
+
+.MyBag #checkoutbutton:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  background-color: #c58a1b;
+}
+
+.emptyCartDiv {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.emptyCartDiv img {
+  height: 15vw;
+}
+/*# sourceMappingURL=bag.css.map */

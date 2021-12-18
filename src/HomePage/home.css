@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+.PromoCodeBanner {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  background-color: #c58a1b;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.PromoCodeBanner h2 {
+  font-size: medium;
+  margin: 0 5vh 0vh 2vh;
+  letter-spacing: 0.5vh;
+  color: black;
+  padding: 0 1vh;
+  border: 2px dotted black;
+}
+
+.PromoCodeBanner p {
+  font-size: large;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.HomeSection {
+  padding-top: 10vh;
+  position: relative;
+  min-height: 100vh;
+  width: 80vw;
+}
+
+.HomeSection #HomeNavBar {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.HomeSection #HomeNavBar a {
+  text-decoration: none;
+  color: #da981e;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.HomeSection #HomeNavBar a:hover {
+  color: brown;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.HomeSection #HomeNavBar ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.HomeSection #HomeNavBar ul li {
+  padding: 2vw;
+}
+
+.HomeSection #FeaturesList {
+  margin-top: 3vh;
+  margin-left: -1vw;
+}
+
+.HomeSection #FeaturesList li {
+  font-size: larger;
+  padding: 1vh;
+  list-style-image: url("../resources/bullet.png");
+}
+
+.HomeSection .HomeText {
+  width: 60%;
+  padding: 3vh 0vh;
+}
+
+.HomeSection .HomeText h2 {
+  font-size: 3rem;
+}
+
+.HomeSection i {
+  color: #e99b67;
+}
+
+.HomeSection button {
+  color: white;
+  margin-top: 2vh;
+  padding: 1.5vh 2vw;
+  font-size: large;
+  border: none;
+  background-color: #da981e;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.HomeSection button:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  background-color: #c58a1b;
+}
+
+#logo {
+  height: 20vh;
+}
+
+#HomeImage {
+  height: 100vh;
+  width: 25vw;
+  position: absolute;
+  right: 0vw;
+  top: 0;
+}
+
+.MainHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=home.css.map */

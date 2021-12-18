@@ -1,0 +1,55 @@
+.Footer {
+    margin-top: 5vh;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vh 10vw;
+  background: linear-gradient(to right top,rgb(248, 234, 234),white);
+  position: relative;
+
+  a{
+      color:rgb(122, 59, 0);
+  }
+
+  p{
+      text-align: center  ;
+   position: absolute;
+   bottom: 3vh;
+   font-weight: bold;
+   width: 80%;
+  }
+
+  .FooterText {
+    display: flex;
+
+    .contacts {
+      margin-left: 2vw;
+    }
+
+    .contactInfo {
+      display: flex;
+      height: 5vh;
+      align-items: center;
+      margin: 0.2vh 0vh;
+      img {
+        height: 3vh;
+        margin-right: 1vw;
+      }
+    }
+  }
+
+  .connextDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+  }
+
+  #connext {
+    height: 20vh;
+    float: right;
+  }
+}

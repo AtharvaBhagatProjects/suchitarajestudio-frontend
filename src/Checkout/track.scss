@@ -1,0 +1,26 @@
+.TrackBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    margin: 5vh 0;
+  }
+  input{
+      width: 20vw;
+      padding: 1vh;
+      font-size: medium;
+      outline: none;
+      margin-right: 1vh;
+      
+      border: 1px solid gray;
+  }
+  
+  table{
+      margin: 5vh;
+      border: 1px solid;
+  }
+  th ,td{
+      padding: 2vh;
+      border: 1px solid;
+  }
+}

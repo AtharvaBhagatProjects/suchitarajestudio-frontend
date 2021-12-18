@@ -1,0 +1,349 @@
+.BagSummary {
+  background-color: #eeeeee;
+  width: 20vw;
+  padding: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2vh;
+}
+
+.BagSummary hr {
+  height: 0px;
+  width: 80%;
+  border: 1px dotted black;
+  margin: 2vh;
+}
+
+.invalidIndicator {
+  position: absolute;
+  right: 0;
+  color: red;
+}
+
+.CheckOutForm .formfield {
+  position: relative;
+  width: 100%;
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: large;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CheckOutForm .formfield label {
+  width: 20%;
+}
+
+.CheckOutForm .formfield input {
+  width: 80%;
+  border: none;
+  border-bottom: 2px #e0dede solid;
+  font-size: large;
+  outline: none;
+  padding: 0.5vh 1vh;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.CheckOutForm .formfield input:focus {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  border-bottom: 2px black solid;
+}
+
+.CheckOutForm #SaveDetails {
+  border: none;
+  outline: none;
+  padding: 1vh 3vw;
+  cursor: pointer;
+  font-size: large;
+  background-color: #f0ba56;
+  color: white;
+  font-weight: bolder;
+}
+
+.CheckOutForm b {
+  color: green;
+  margin-left: 2vw;
+}
+
+.PersonalDetails {
+  width: 40vw;
+  padding: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2vh;
+}
+
+.CheckOutHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.OrderSummaryItems .OrderBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  margin: 1vh 0vh;
+}
+
+.OrderSummaryItems .ProductImage {
+  height: 8vh;
+  margin-right: 1vw;
+}
+
+.OrderSummaryItems .ProductText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.OrderSummaryItems .ProductText div {
+  width: 6vw;
+}
+
+.PaymentModal {
+  width: 100%;
+  height: 100vh;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  background-color: rgba(71, 69, 69, 0.589);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.PaymentModal #closeButton {
+  position: absolute;
+  right: 1vw;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.PaymentModal .PaymentInfo {
+  background-color: white;
+  overflow-y: scroll;
+  height: 70vh;
+  width: 50vw;
+  position: relative;
+  padding: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.PaymentModal .PaymentInfo h1 {
+  position: absolute;
+  background-color: white;
+}
+
+.PaymentModal .PaymentInfo #productInsideLogo {
+  position: fixed;
+  height: 10vh;
+  right: 13vw;
+  bottom: 8vh;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary {
+  margin-top: 7vh;
+  padding-bottom: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary img {
+  height: 5vh;
+  margin-left: 0;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary hr {
+  height: 0px;
+  width: 20vw;
+  border: 1px solid black;
+  margin: 1vh 0;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary .BagDetails {
+  margin-right: 2vw;
+  width: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary .BagDetails h6 {
+  font-size: larger;
+  font-weight: bolder;
+  color: #eba626;
+  text-align: center;
+}
+
+.PaymentModal .PaymentInfo .ActualSummary .BagDetails h2 {
+  text-align: center;
+}
+
+#couponBox {
+  width: 20vw;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: aliceblue;
+}
+
+#couponBox input {
+  text-align: center;
+  letter-spacing: 3px;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+}
+
+.SuccessfulPayment {
+  width: 50vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SuccessfulPayment img {
+  height: 30vh;
+}
+
+.SuccessfulPayment a {
+  color: orange;
+  font-size: larger;
+  margin: 1vh;
+}
+
+.PaymentHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2vh 0vh;
+}
+
+.PaymentButtons {
+  border: none;
+  outline: none;
+  padding: 1vh 3vw;
+  margin: 1vh 0vh;
+  font-size: large;
+  background-color: #dfad52;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.PayOnDelivery {
+  width: 50vw;
+  height: 30vh;
+  background-color: rgba(73, 71, 71, 0.911);
+  position: fixed;
+  right: 25vw;
+  top: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.PayOnDelivery p {
+  font-size: large;
+  color: white;
+  width: 70%;
+  text-align: center;
+}
+/*# sourceMappingURL=checkout.css.map */

@@ -1,0 +1,79 @@
+.Footer {
+  margin-top: 5vh;
+  height: 40vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0vh 10vw;
+  background: -webkit-gradient(linear, left bottom, right top, from(#f8eaea), to(white));
+  background: linear-gradient(to right top, #f8eaea, white);
+  position: relative;
+}
+
+.Footer a {
+  color: #7a3b00;
+}
+
+.Footer p {
+  text-align: center;
+  position: absolute;
+  bottom: 3vh;
+  font-weight: bold;
+  width: 80%;
+}
+
+.Footer .FooterText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Footer .FooterText .contacts {
+  margin-left: 2vw;
+}
+
+.Footer .FooterText .contactInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.2vh 0vh;
+}
+
+.Footer .FooterText .contactInfo img {
+  height: 3vh;
+  margin-right: 1vw;
+}
+
+.Footer .connextDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70%;
+}
+
+.Footer #connext {
+  height: 20vh;
+  float: right;
+}
+/*# sourceMappingURL=footer.css.map */

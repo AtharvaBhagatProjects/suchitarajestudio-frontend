@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+
+.PromoCodeBanner {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  transition-duration: 1s;
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  color: white;
+  background-color: rgb(197, 138, 27);
+  width: 100%;
+  justify-content: center;
+
+  h2 {
+    font-size: medium;
+    margin: 0 5vh 0vh 2vh;
+    letter-spacing: 0.5vh;
+    color: black;
+    padding: 0 1vh;
+    border: 2px dotted black;
+  }
+  p {
+    font-size: large;
+font-weight: bolder;
+    cursor: pointer;
+  }
+}
+
+.HomeSection {
+  padding-top: 10vh;
+  position: relative;
+  min-height: 100vh;
+  width: 80vw;
+
+  #HomeNavBar {
+    width: 70%;
+    a {
+      text-decoration: none;
+      color: rgb(218, 152, 30);
+
+      transition-duration: 0.5s;
+    }
+    a:hover {
+      color: brown;
+      transition-duration: 0.5s;
+    }
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    ul {
+      list-style: none;
+      display: flex;
+      font-size: larger;
+      font-weight: bold;
+      li {
+        padding: 2vw;
+      }
+    }
+  }
+
+  #FeaturesList {
+    margin-top: 3vh;
+    margin-left: -1vw;
+    li {
+      font-size: larger;
+      padding: 1vh;
+      list-style-image: url("../resources/bullet.png");
+    }
+  }
+
+  .HomeText {
+    width: 60%;
+    padding: 3vh 0vh;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  i {
+    color: rgb(233, 155, 103);
+  }
+
+  button {
+    color: white;
+    margin-top: 2vh;
+    padding: 1.5vh 2vw;
+    font-size: large;
+    border: none;
+    background-color: rgb(218, 152, 30);
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+
+  button:hover {
+    transition-duration: 0.5s;
+
+    background-color: rgb(197, 138, 27);
+  }
+}
+
+#logo {
+  height: 20vh;
+}
+
+#HomeImage {
+  height: 100vh;
+  width: 25vw;
+  position: absolute;
+  right: 0vw;
+  top: 0;
+}
+
+.MainHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
