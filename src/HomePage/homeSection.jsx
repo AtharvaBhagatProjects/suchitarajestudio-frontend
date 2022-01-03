@@ -9,8 +9,6 @@ import "./home.css";
 const HomeSection = () => {
   return (
     <div className='HomeSection'>
-      <img src={HomeImage} id='HomeImage' data-aos='fade-up' data-aos-offset='0'></img>
-
       <div id='HomeNavBar' data-aos='fade-down' data-aos-offset='0'>
         <img src={logo} id='logo'></img>
 
@@ -19,13 +17,14 @@ const HomeSection = () => {
             <Link to='/catalogue'>Catalogue </Link>
           </li>
           <li>
-            <Link to='/about-us'>About Us</Link>
+            <Link to='/about-us'>FAQs</Link>
           </li>
           <li>
-            <Link to='/contact-us'>Contact Us </Link>
+            <Link to='/trackOrders'>Track Orders</Link>
           </li>
         </ul>
       </div>
+      <img src={HomeImage} id='HomeImage' data-aos='fade-up' data-aos-offset='0'></img>
 
       <div className='HomeText'>
         <h2 data-aos='fade-down' data-aos-offset='0'>

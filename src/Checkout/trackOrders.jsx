@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./track.css";
+import BackendUrl from "../BackendUrl";
 
 import axios from "axios";
+import logo from "../resources/suchitarajeTransparentLogo.png";
 
 import { db } from "../firebase";
+import { Link } from "react-router-dom";
 const TrackOrders = () => {
-  let [IDRequested, setIDRequested] = useState(undefined);
-  let [dataReceived, setDataReceived] = useState(false);
+  let urlParameter = window.location.href.split("?");
+
+  let [IDRequested, setIDRequested] = useState(urlParameter[1]);
+  let [dataReceived, setDataReceived] = useState("");
   let [OrderObject, setOrderObject] = useState({});
   const fetchOrder = () => {
     db.collection("Orders")
@@ -23,14 +28,30 @@ const TrackOrders = () => {
 
   return (
     <div className='MainHolder'>
+      <div className='NavBar'>
+        <Link to='/home'>
+          <img src={logo} id='logo'></img>
+        </Link>
+        <Link to='/catalogue'>
+          <h2>Catalogue</h2>
+        </Link>{" "}
+        <Link to='/about-us'>
+          <h2>FAQs</h2>
+        </Link>
+      </div>
       <div className='TrackBox'>
         <h1>Tracking Details</h1>
-        <div>
+        <div onLoad={fetchOrder}>
           <input
             type='text'
             placeholder='Enter your Order ID'
             autoFocus
-            onChange={e => setIDRequested(e.target.value.replace(/\s+/g, ""))}
+            value={IDRequested}
+            onChange={e => {
+              setIDRequested(e.target.value.replace(/\s+/g, ""));
+
+              fetchOrder();
+            }}
           />
           <button onClick={fetchOrder} className='PaymentButtons'>
             Submit
@@ -43,7 +64,7 @@ const TrackOrders = () => {
               <th>Name</th>
               <th>Mobile</th>
               <th>Order Details</th>
-              <th>Shipping Address</th>
+              <th id='AddressTable'>Shipping Address</th>
               <th>Payment Balance</th>
               <th>ORDER STATUS</th>
             </tr>
@@ -52,7 +73,7 @@ const TrackOrders = () => {
               <td>{OrderObject.CustomerName}</td>
               <td>{OrderObject.CustomerMobile}</td>
               <td>{OrderObject.ProductKeys}</td>
-              <td>
+              <td id='AddressTable'>
                 {OrderObject.Address +
                   ", " +
                   OrderObject.City +
@@ -68,6 +89,9 @@ const TrackOrders = () => {
               <td>{OrderObject.BillBalance}</td>
               <td>
                 {OrderObject.OrderStatus}{" "}
+                {OrderObject.CourierLink && OrderObject.OrderStatus == "Shipped" && (
+                  <><br/><a href={OrderObject.CourierLink}>Shipment Link</a></>
+                )}
                 {OrderObject.OrderStatus == "Delivered" && (
                   <button
                     onClick={() => {
@@ -75,7 +99,7 @@ const TrackOrders = () => {
                         OrderStatus: "Return Requested",
                       });
 
-                      axios.post("/Mail", {
+                      axios.post(BackendUrl + "/Mail", {
                         email: OrderObject.CustomerEmail,
                         subject: `Your Return Request is Received`,
                         message: `Dear ${OrderObject.CustomerName}, <br ></br><br ></br>

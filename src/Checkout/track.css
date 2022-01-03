@@ -29,8 +29,40 @@
   border: 1px solid;
 }
 
-.TrackBox th, .TrackBox td {
+.TrackBox th,
+.TrackBox td {
   padding: 2vh;
   border: 1px solid;
+}
+
+@media screen and (max-width: 1024px) {
+  .TrackBox {
+    text-align: left;
+  }
+  .TrackBox h1 {
+    margin: 15vh 0vh 2vh 0;
+  }
+  .TrackBox input {
+    width: 60vw;
+  }
+  .TrackBox table {
+    margin: 4vh;
+    border: 0px solid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .TrackBox th,
+  .TrackBox td {
+    padding: 1vh;
+    border: 0.2px solid #d1c8b9;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 8vh;
+  }
+  .TrackBox #AddressTable {
+    height: 17vh;
+  }
 }
 /*# sourceMappingURL=track.css.map */

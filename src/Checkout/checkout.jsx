@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./checkout.css";
-
+import BackendUrl from "../BackendUrl";
 import { Link } from "react-router-dom";
 import logo from "../resources/suchitarajeTransparentLogo.png";
 import orderPlaced from "../resources/placed.gif";
@@ -74,12 +74,7 @@ const CheckOutPage = () => {
     } else {
       setInvalidName(false);
     }
-    if (city.length < 1) {
-      setInvalidCity(true);
-      return;
-    } else {
-      setInvalidCity(false);
-    }
+
     if (MobilePattern.test(customerMob) === false) {
       setInvalidNumber(true);
       return;
@@ -91,6 +86,12 @@ const CheckOutPage = () => {
       return;
     } else {
       setInvalidEmail(false);
+    }
+    if (city.length < 1) {
+      setInvalidCity(true);
+      return;
+    } else {
+      setInvalidCity(false);
     }
     if (!invalidCity && !invalidEmail && !invalidName && !invalidNumber && !invalidPincode) {
       setAllValid(true);
@@ -165,20 +166,20 @@ const CheckOutPage = () => {
       OrderStatus: "Order Received",
       Date: today,
     });
-    axios.post("/Mail", {
+    axios.post(BackendUrl + "/Mail", {
       email: customerEmail,
       subject: `Your Order is Placed Successfully`,
       message: `Dear ${customerName}, <br ></br><br ></br>
-      We have received your order with <br></br> OrderID :  ${orderID} <br></br> <br></br> We will process the order shortly and keep you updated. <br></br> Payment Received : ${
+      We have received your order with <br></br> OrderID :  ${orderID} <br></br> Track Order here <a href='https://suchitarajestudio.netlify.app/trackOrders?${orderID}'>https://suchitarajestudio.netlify.app/trackOrders?${orderID}</a> <br></br> We will process the order shortly and keep you updated. <br></br> Payment Received : Rs. ${
         orderAmount - paidAmount
       } <br></br> Your Payment Balance is Rs. ${paidAmount}. <br></br> Thank you for Shopping with us. <br></br> <img src='cid:logo'></img>`,
       orderID: orderID,
     });
-    axios.post("/sendSMS", {
-      message: `We have received your order : ${orderID} and will start processing it quickly. Thank you for shopping WIth us. - Suchita Raje Studio`,
+    axios.post(BackendUrl + "/sendSMS", {
+      message: `We have received your order : ${orderID} and will start processing it quickly. Thank you for shopping with us. - Suchita Raje Studio`,
       number: [customerMob],
     });
-    axios.post("/Mail", {
+    axios.post(BackendUrl + "/Mail", {
       email: "atharvabhagatprojects@gmail.com",
       subject: `New Order Received !!`,
       message: `From ${customerName}, ${customerEmail} , ${customerMob} <br ></br><br ></br>
@@ -205,13 +206,13 @@ const CheckOutPage = () => {
     script.onload = async () => {
       try {
         setLoading(true);
-        const result = await axios.post("/create-order", {
+        const result = await axios.post(BackendUrl + "/create-order", {
           amount: 1 + "00",
         });
         const { amount, id: order_id, currency } = result.data;
         const {
           data: { key: razorpayKey },
-        } = await axios.get("/get-razorpay-key");
+        } = await axios.get(BackendUrl + "/get-razorpay-key");
 
         setOrderID(result.data.id);
 
@@ -223,7 +224,7 @@ const CheckOutPage = () => {
           description: "Payment",
           order_id: order_id,
           handler: async function (response) {
-            const result = await axios.post("/pay-order", {
+            const result = await axios.post(BackendUrl + "/pay-order", {
               amount: amount,
               razorpayPaymentId: response.razorpay_payment_id,
               razorpayOrderId: response.razorpay_order_id,
@@ -264,13 +265,13 @@ const CheckOutPage = () => {
     script.onload = async () => {
       try {
         setLoading(true);
-        const result = await axios.post("/create-order", {
+        const result = await axios.post(BackendUrl + "/create-order", {
           amount: orderAmount + "00",
         });
         const { amount, id: order_id, currency } = result.data;
         const {
           data: { key: razorpayKey },
-        } = await axios.get("/get-razorpay-key");
+        } = await axios.get(BackendUrl + "/get-razorpay-key");
 
         setOrderID(result.data.id);
 
@@ -282,7 +283,7 @@ const CheckOutPage = () => {
           description: "Payment",
           order_id: order_id,
           handler: async function (response) {
-            const result = await axios.post("/pay-order", {
+            const result = await axios.post(BackendUrl + "/pay-order", {
               amount: amount,
               razorpayPaymentId: response.razorpay_payment_id,
               razorpayOrderId: response.razorpay_order_id,
@@ -313,19 +314,16 @@ const CheckOutPage = () => {
     <div className='MainHolder'>
       <div className='NavBar'>
         <Link to='/home'>
-          <h2>Home</h2>
+          <img src={logo} id='logo'></img>
         </Link>
         <Link to='/catalogue'>
           <h2>Catalogue</h2>
-        </Link>
-        <img src={logo} id='logo'></img>
-
+        </Link>{" "}
         <Link to='/about-us'>
-          <h2>About Us</h2>
+          <h2>FAQs</h2>
         </Link>
-
-        <Link to='/contact-us'>
-          <h2>Contact Us</h2>
+        <Link to='/trackOrders'>
+          <h2>Track Orders</h2>
         </Link>
       </div>
       {Successfully && (
@@ -335,7 +333,7 @@ const CheckOutPage = () => {
           <h2 id='trackingID'>Order ID : {orderID}</h2>
           <p>You will Receive Notifications via Mail and SMS </p>
 
-          <Link to='/trackOrders'>Track Your Order Status Here</Link>
+          <Link to={`/trackOrders?${orderID}`}>Track Your Order Status Here</Link>
           <Link to='/catalogue'>Shop Again</Link>
         </div>
       )}
@@ -353,7 +351,7 @@ const CheckOutPage = () => {
                   dakhavRe.innerHTML = "Total : &#8377;" + window.atob(totalCost);
 
                   applied && localStorage.removeItem([PaymentAmount]);
-
+                  setPayOnDeliveryModal(false);
                   setShowPaymentModal(false);
                 }}>
                 X

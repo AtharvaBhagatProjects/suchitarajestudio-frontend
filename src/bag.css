@@ -9,6 +9,7 @@
   right: 4vw;
   top: 2vh;
   cursor: pointer;
+  z-index: 101;
 }
 
 #bagContainer h4 {
@@ -47,7 +48,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 20vw;
-  z-index: 100;
+  z-index: 101;
   background-color: rgba(253, 246, 242, 0.658);
   height: 100%;
   border-left: 2px #c3c7bf;
@@ -56,8 +57,10 @@
           backdrop-filter: blur(1rem);
   -webkit-transition: all ease-out;
   transition: all ease-out;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  -webkit-transform: translateX(22vw);
+          transform: translateX(22vw);
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
   padding: 2vh 2vw;
 }
 
@@ -192,5 +195,58 @@
 
 .emptyCartDiv img {
   height: 15vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .MyBag {
+    -webkit-transform: translateX(95vw);
+            transform: translateX(95vw);
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    width: 95vw;
+    padding: 2vh 4vw;
+  }
+  .MyBag .Header {
+    width: 60vw;
+  }
+  .MyBag #closeButton {
+    position: fixed;
+    right: 5vw;
+    cursor: pointer;
+  }
+  .MyBag .ProductsContainer {
+    height: 71vh;
+    width: 100%;
+    margin-top: 2vh;
+    overflow-y: scroll;
+  }
+  .MyBag .ProductsContainer .ProductBox .ProductInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2vh 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  .MyBag .ProductsContainer .ProductBox .ProductImage {
+    height: 10vh;
+    margin-right: 5vw;
+  }
+  .MyBag #checkoutbutton {
+    color: white;
+    margin-top: 2vh;
+    padding: 1.5vh 2vw;
+    font-size: large;
+    width: 84vw;
+    border: none;
+    position: fixed;
+    right: 6vw;
+    bottom: 5vh;
+  }
+  .emptyCartDiv img {
+    height: 85vw;
+  }
 }
 /*# sourceMappingURL=bag.css.map */

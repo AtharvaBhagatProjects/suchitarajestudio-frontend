@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bag from "./resources/bag.gif";
 import "./bag.css";
 import { Link } from "react-router-dom";
@@ -52,9 +52,7 @@ const Bag = () => {
         <img src={bag} id='bag'></img>
         <h4>{no_of_products}</h4>
       </div>
-      <div
-        className='MyBag'
-        style={{ transform: showMyBag ? "translateX(0vw)" : "translateX(20vw)" }}>
+      <div className='MyBag' style={{ transform: showMyBag ? "translateX(0vw)" : "" }}>
         <div className='Header'>
           <h1>My Bag </h1>
           <img src={bag} id='bag' />

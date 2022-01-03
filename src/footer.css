@@ -12,8 +12,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0vh 10vw;
-  background: -webkit-gradient(linear, left bottom, right top, from(#f8eaea), to(white));
-  background: linear-gradient(to right top, #f8eaea, white);
+  background: -webkit-gradient(linear, right top #f8eaea, from(white));
+  background: linear-gradient(to right top #f8eaea, white);
   position: relative;
 }
 
@@ -75,5 +75,90 @@
 .Footer #connext {
   height: 20vh;
   float: right;
+}
+
+@media screen and (max-width: 1024px) {
+  .Footer {
+    padding: 0vh 5vw;
+    font-size: 1.5vh;
+    height: 55vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8eaea), to(white));
+    background: linear-gradient(to bottom, #f8eaea, white);
+  }
+  .Footer p {
+    text-align: center;
+    position: absolute;
+    bottom: 3vh;
+    font-weight: bold;
+    width: 80%;
+  }
+  .Footer .FooterText {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .Footer .FooterText .contacts {
+    margin-left: 2vw;
+  }
+  .Footer .FooterText .contactInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 4vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0.2vh 0vh;
+  }
+  .Footer .FooterText .contactInfo img {
+    height: 2vh;
+    margin-right: 1vw;
+  }
+  .Footer .connextDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90vw;
+    height: 20vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .Footer #connext {
+    height: 10vh;
+    float: right;
+  }
 }
 /*# sourceMappingURL=footer.css.map */

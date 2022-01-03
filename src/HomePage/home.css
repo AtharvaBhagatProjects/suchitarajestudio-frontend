@@ -155,4 +155,71 @@
 a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1024px) {
+  .PromoCodeBanner {
+    height: 5vh;
+    font-size: 1vh;
+  }
+  .PromoCodeBanner h2 {
+    font-size: 1vh;
+    margin: 1vh;
+    letter-spacing: 0.5vh;
+    color: black;
+    padding: 0 0.5vh;
+  }
+  .PromoCodeBanner p {
+    font-size: small;
+  }
+  .HomeSection {
+    padding-top: 7vh;
+    position: relative;
+    min-height: 100vh;
+    width: 80vw;
+  }
+  .HomeSection #HomeNavBar {
+    width: 90vw;
+    margin-bottom: 3vh;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .HomeSection #HomeNavBar ul {
+    margin-left: -10vw;
+    font-size: 1.5vh;
+  }
+  .HomeSection #HomeNavBar ul li {
+    padding: 1.5vw;
+  }
+  .HomeSection #FeaturesList {
+    margin-top: 3vh;
+    margin-left: -1vw;
+    text-align: left;
+  }
+  .HomeSection #FeaturesList li {
+    font-size: 1.6vh;
+    padding: 0.7vh;
+  }
+  .HomeSection .HomeText {
+    width: 90vw;
+    margin-left: -5vw;
+    padding: 2vh 0vh;
+    text-align: center;
+  }
+  .HomeSection .HomeText h2 {
+    font-size: 1.2rem;
+  }
+  .HomeSection button {
+    margin-top: 2vh;
+    padding: 1.5vh 5vw;
+    width: 100%;
+  }
+  #logo {
+    height: 8vh;
+  }
+  #HomeImage {
+    height: 70vh;
+    width: 80vw;
+    position: static;
+  }
+}
 /*# sourceMappingURL=home.css.map */

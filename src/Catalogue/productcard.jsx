@@ -16,6 +16,8 @@ import AOS from "aos";
 import { db } from "../firebase";
 
 const ProductCard = props => {
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
   let ProductID = props.ProductID;
   let [modal, setModal] = useState(false);
   let [selectedSize, setSelectedSize] = useState("");
@@ -38,6 +40,10 @@ const ProductCard = props => {
   ];
 
   let [catalogImage, setCatalogImage] = useState(ImagesArray[0]);
+  const timepass = () => {
+    console.log("hmm");
+    window.location.reload();
+  };
 
   const HandleAddtoBag = (product_name, product_price, product_id, product_size, product_image) => {
     let MyBagLength = localStorage.getItem([locale1]);
@@ -111,11 +117,15 @@ const ProductCard = props => {
     });
 
     localStorage.setItem([CartPrice], window.btoa(totalPrice));
+    if (vw <= 1024) {
+      window.location.reload();
+    } 
   };
 
   useEffect(() => {
     setTimeout(setAdded, 2000);
     setInterval(setAdded, 5000);
+    
   }, []);
 
   return (
@@ -172,67 +182,7 @@ const ProductCard = props => {
             }}>
             X
           </h1>
-          <div className='Images' onMouseLeave={() => setCatalogImage(ImagesArray[0])}>
-            <div className='MainImageHolder'>
-              <img
-                src={catalogImage}
-                className='MainImage'
-                
-              />
-            </div>
-            <div className='smallPicsHolder'>
-              <img
-                className='smallPic'
-                src={ImagesArray[0]}
-                onMouseOver={() => setCatalogImage(ImagesArray[0])}
-                onClick={() => setCatalogImage(ImagesArray[0])}
-                style={{
-                  borderColor: catalogImage == ImagesArray[0] ? "" : "transparent",
-                  opacity: catalogImage == ImagesArray[0] ? "" : "1",
-                }}
-              />
-              <img
-                className='smallPic'
-                src={ImagesArray[1]}
-                onMouseOver={() => setCatalogImage(ImagesArray[1])}
-                onClick={() => setCatalogImage(ImagesArray[1])}
-                style={{
-                  borderColor: catalogImage == ImagesArray[1] ? "" : "transparent",
-                  opacity: catalogImage == ImagesArray[1] ? "" : "1",
-                }}
-              />
-              <img
-                className='smallPic'
-                src={ImagesArray[2]}
-                onMouseOver={() => setCatalogImage(ImagesArray[2])}
-                onClick={() => setCatalogImage(ImagesArray[2])}
-                style={{
-                  borderColor: catalogImage == ImagesArray[2] ? "" : "transparent",
-                  opacity: catalogImage == ImagesArray[2] ? "" : "1",
-                }}
-              />
-              <img
-                className='smallPic'
-                src={ImagesArray[3]}
-                onMouseOver={() => setCatalogImage(ImagesArray[3])}
-                onClick={() => setCatalogImage(ImagesArray[3])}
-                style={{
-                  borderColor: catalogImage == ImagesArray[3] ? "" : "transparent",
-                  opacity: catalogImage == ImagesArray[3] ? "" : "1",
-                }}
-              />
-              <img
-                className='smallPic'
-                src={ImagesArray[4]}
-                onMouseOver={() => setCatalogImage(ImagesArray[4])}
-                onClick={() => setCatalogImage(ImagesArray[4])}
-                style={{
-                  borderColor: catalogImage == ImagesArray[4] ? "" : "transparent",
-                  opacity: catalogImage == ImagesArray[4] ? "" : "1",
-                }}
-              />
-            </div>
-          </div>
+
           <div className='ProductInfo'>
             <h1 className='ProductName'>{props.ProductName}</h1>
             <h2>{props.CollectionDescription}</h2>
@@ -304,6 +254,64 @@ const ProductCard = props => {
             </button>
             <br />
             <h4>Custom Sizes Available : Order via Whatsapp/Instagram Shop </h4>
+
+            <div className='Images' onMouseLeave={() => setCatalogImage(ImagesArray[0])}>
+              <div className='MainImageHolder'>
+                <img src={catalogImage} className='MainImage' />
+              </div>
+              <div className='smallPicsHolder'>
+                <img
+                  className='smallPic'
+                  src={ImagesArray[0]}
+                  onMouseOver={() => setCatalogImage(ImagesArray[0])}
+                  onClick={() => setCatalogImage(ImagesArray[0])}
+                  style={{
+                    borderColor: catalogImage == ImagesArray[0] ? "" : "transparent",
+                    opacity: catalogImage == ImagesArray[0] ? "" : "1",
+                  }}
+                />
+                <img
+                  className='smallPic'
+                  src={ImagesArray[1]}
+                  onMouseOver={() => setCatalogImage(ImagesArray[1])}
+                  onClick={() => setCatalogImage(ImagesArray[1])}
+                  style={{
+                    borderColor: catalogImage == ImagesArray[1] ? "" : "transparent",
+                    opacity: catalogImage == ImagesArray[1] ? "" : "1",
+                  }}
+                />
+                <img
+                  className='smallPic'
+                  src={ImagesArray[2]}
+                  onMouseOver={() => setCatalogImage(ImagesArray[2])}
+                  onClick={() => setCatalogImage(ImagesArray[2])}
+                  style={{
+                    borderColor: catalogImage == ImagesArray[2] ? "" : "transparent",
+                    opacity: catalogImage == ImagesArray[2] ? "" : "1",
+                  }}
+                />
+                <img
+                  className='smallPic'
+                  src={ImagesArray[3]}
+                  onMouseOver={() => setCatalogImage(ImagesArray[3])}
+                  onClick={() => setCatalogImage(ImagesArray[3])}
+                  style={{
+                    borderColor: catalogImage == ImagesArray[3] ? "" : "transparent",
+                    opacity: catalogImage == ImagesArray[3] ? "" : "1",
+                  }}
+                />
+                <img
+                  className='smallPic'
+                  src={ImagesArray[4]}
+                  onMouseOver={() => setCatalogImage(ImagesArray[4])}
+                  onClick={() => setCatalogImage(ImagesArray[4])}
+                  style={{
+                    borderColor: catalogImage == ImagesArray[4] ? "" : "transparent",
+                    opacity: catalogImage == ImagesArray[4] ? "" : "1",
+                  }}
+                />
+              </div>
+            </div>
 
             <div className='CatalogShower'>
               <div className='featureBox'>

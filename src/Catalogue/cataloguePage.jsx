@@ -55,20 +55,17 @@ const CataloguePage = () => {
       <div className='MainHolder'>
         <div className='NavBar' data-aos='fade-down' data-aos-offset='0'>
           <Link to='/home'>
-            <h2>Home</h2>
+            <img src={logo} id='logo'></img>
           </Link>
           <h2>Catalogue</h2>
-          <img src={logo} id='logo'></img>
-
-          <Link to='/about-us'>
-            <h2>About Us</h2>
-          </Link>
-
-          <Link to='/contact-us'>
-            <h2>Contact Us</h2>{" "}
-          </Link>
+            <Link to='/about-us' className='hideME'>FAQs</Link>
+            <Link to='/trackOrders' className='hideME'>Track Orders</Link>
         </div>
-        <h1 className='CollectionName' data-aos='fade-down' data-aos-offset='0'>
+        <h1
+          className='CollectionName'
+          id='firstCollection'
+          data-aos='fade-down'
+          data-aos-offset='0'>
           {" "}
           KURTA SETS{" "}
         </h1>

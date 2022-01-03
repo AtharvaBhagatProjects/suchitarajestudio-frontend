@@ -184,6 +184,13 @@
   flex-direction: column;
   background-color: aliceblue;
 
+  button {
+    border: none;
+    padding: 0.5vh 2vw;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
   input {
     text-align: center;
     letter-spacing: 3px;
@@ -245,5 +252,165 @@
     color: white;
     width: 70%;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .NavBar {
+    h2 {
+      margin: 0 2vw;
+    }
+  }
+  .BagSummary {
+    width: 90vw;
+  }
+
+  .invalidIndicator {
+    position: absolute;
+    right: 0;
+    top: -1vh;
+    color: red;
+  }
+
+  .CheckOutForm {
+    .formfield {
+      width: 100%;
+      height: 7vh;
+      display: flex;
+      font-size: medium;
+    }
+    #SaveDetails {
+      border: none;
+      outline: none;
+      padding: 1vh 3vw;
+      cursor: pointer;
+      font-size: large;
+      color: white;
+      font-weight: bolder;
+    }
+    b {
+      color: green;
+      margin-left: 2vw;
+    }
+  }
+
+  .PersonalDetails {
+    width: 90vw;
+    margin-top: 15vh;
+  }
+
+  .OrderSummaryItems {
+    .OrderBox {
+      width: 80vw;
+    }
+
+    .ProductImage {
+      height: 8vh;
+      margin-right: 2vw;
+    }
+    .ProductText {
+      display: flex;
+      div {
+        width: 30vw;
+      }
+    }
+  }
+
+  .PaymentModal {
+    height: 100vh;
+    width: 100vw;
+
+    #closeButton {
+      right: 2vw;
+    }
+    .PaymentInfo {
+      height: 90vh;
+      width: 90vw;
+
+      #productInsideLogo {
+        display: none;
+      }
+      .ActualSummary {
+        hr {
+          width: 75vw;
+        }
+        .BagDetails {
+          width: 80vw;
+
+          h6 {
+            font-size: larger;
+            font-weight: bolder;
+            color: rgb(235, 166, 38);
+            text-align: center;
+          }
+          h2 {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  #couponBox {
+    width: 80vw;
+    height: 10vh;
+  }
+
+  .SuccessfulPayment {
+      margin-top: 10vh;
+    width: 90vw;
+    height: fit-content;
+    font-size: small;
+    img {
+      height: 30vh;
+    }
+    a {
+      color: orange;
+      font-size: larger;
+      margin: 1vh;
+    }
+  }
+
+  .PaymentHolder {
+    display: flex;
+    flex-direction: column;
+    margin: 2vh 0vh;
+  }
+
+  .UserDetails{
+      width: 82vw;
+      margin-top: 3vh;
+  }
+
+  .PaymentButtons {
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 1vh 3vw;
+    margin: 1vh 0vh;
+    font-size: large;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .PayOnDelivery {
+    width: 90vw;
+    height: 70vh;
+    position: fixed;
+    right: 5vw;
+    top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+      font-size: large;
+      color: white;
+      width: 90%;
+      text-align: center;
+      margin-bottom: 3vh;
+    }
   }
 }

@@ -5,6 +5,7 @@
   right: 4vw;
   top: 2vh;
   cursor: pointer;
+  z-index: 101;
 
   h4 {
     position: absolute;
@@ -24,7 +25,6 @@
 #bag {
   height: 7vh;
   width: 7vh;
-  
 }
 
 .MyBag {
@@ -40,15 +40,15 @@
   display: flex;
   flex-direction: column;
   width: 20vw;
-  z-index: 100;
+  z-index: 101;
   background-color: rgba(253, 246, 242, 0.658);
   height: 100%;
   border-left: 2px rgb(195, 199, 191);
   border-left-style: dashed;
   backdrop-filter: blur(1rem);
   transition: all ease-out;
-
-  transition-duration: 0.5s;
+  transform: translateX(22vw);
+  transition-duration: 0.7s;
   padding: 2vh 2vw;
 
   #closeButton {
@@ -142,5 +142,67 @@
   margin-top: 10vh;
   img {
     height: 15vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .MyBag {
+    transform: translateX(95vw);
+    transition-duration: 1s;
+
+    .Header {
+      width: 60vw;
+    }
+    width: 95vw;
+
+    padding: 2vh 4vw;
+
+    #closeButton {
+      position: fixed;
+      right: 5vw;
+
+      cursor: pointer;
+    }
+
+    .ProductsContainer {
+      height: 71vh;
+      width: 100%;
+      margin-top: 2vh;
+      overflow-y: scroll;
+
+      .ProductBox {
+        .ProductInfo {
+          display: flex;
+
+          margin: 2vh 0;
+          align-items: center;
+          position: relative;
+          
+        }
+
+        .ProductImage {
+          height: 10vh;
+          margin-right: 5vw;
+        }
+      }
+    }
+
+    #checkoutbutton {
+      color: white;
+      margin-top: 2vh;
+      padding: 1.5vh 2vw;
+      font-size: large;
+      width: 84vw;
+      border: none;
+      position: fixed;
+      right: 6vw;
+      bottom: 5vh;
+    }
+  }
+
+  .emptyCartDiv {
+    img {
+      height: 85vw;
+    }
   }
 }
